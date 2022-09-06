@@ -89,6 +89,22 @@ a:hover {
     color: black;
 }
 
+/* Style Add New Playlist Button*/
+.addNewButton {
+    font-family: Prompt;
+    font-size: 14px;
+    color: rgb(67, 219, 135);
+    background-color: black;
+    padding: 10px;
+}
+.addNewInput {
+    font-family: Prompt;
+    font-size: 14px;
+    color: rgb(67, 219, 135);
+    background-color: black;
+    padding: 10px;
+}
+
 /* Style the background gradient */
 @-webkit-keyframes Gradient {
     0% { background-position: 0% 50% }
