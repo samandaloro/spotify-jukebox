@@ -11,7 +11,7 @@ var playlistAPI = "https://api.spotify.com/v1/playlists/";
 var getNewTokenLink = "https://developer.spotify.com/console/get-playlist/";
 
 /* Spotify Web API token - expires after 1 hour */
-var token = "BQB5S1pbSLEpZmOYYWEk7U1f_Ft6BTihK9v2bHcYO9PlBbYiURySiDMoBTa9RBJXcL6iRJN4gf8NmW4Wzdh0kGj2S4QMJjnHS1PKjio7Gbm0bMuBI_R8n7Zw1h9uK2Zc1VdjMAMYNytXpIOaSs9bm9sAypC_Zs1fUqfallpABkcP";
+var token = "token"; 
 
 /* Playlist objects to be created and populated upon API call */
 var playlists = [];
@@ -83,9 +83,13 @@ async function getPlaylists() {
         playlists.push(await fetchPlaylistInfo(playlistIds[i]));
         console.log(playlists[i]);
     }
-    /* Make an alert if the authentication token has expired */
+    /* Prompt for new token if the authentication token has expired */
     if (isTokenValid == false) { 
-        alert(errMsg); }
+        token = prompt(errMsg + " and provide new token here: ");
+        playlists = [];
+        isTokenValid = true;
+        getPlaylists();
+    }
     else { createPlaylist(); }
     
 }
