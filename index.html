@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="appStyle.css">
+        <link href='https://fonts.googleapis.com/css?family=Prompt' rel='stylesheet'>
+    </head>
+
+    <body class="gradient" onload="getPlaylists()">
+        <div><h1 class="jukebox">Spotify Jukebox</h1></div>
+    </br>
+        <div class="slideshow" id="slideshow">
+            <div class="slide fade" id="playlists">
+                <div id="playlist0">
+                </div>
+            </div>
+            <div class="slide fade" id="playlists">
+                <div id="playlist1">
+                </div>
+            </div>
+            <div class="slide fade" id="playlists">
+                <div id="playlist2">
+                </div>
+            </div>
+            <div class="slide fade" id="playlists">
+                <div id="playlist3">
+                </div>
+            </div >
+            <div class="slide fade" id="playlists">
+                <div id="playlist4">
+                </div>
+            </div> 
+            <div class="slide fade" id="playlists">
+                <div id="playlist5">
+                </div>
+            </div>
+            <div class="slide fade" id="playlists">
+                <div id="playlist6">
+                </div>
+            </div>
+            <div class="slide fade" id="playlists">
+                <div id="playlist7">
+                </div>
+            </div>
+            <div class="slide fade" id="playlists">
+                <div id="playlist8">
+                </div>
+            </div>
+            <div class="slide fade" id="playlists">
+                <div id="playlist9">
+                </div>
+            </div>
+            <div class="slide fade" id="playlists">
+                <div id="playlist10">
+                </div>
+            </div>
+            <div class="slide fade" id="playlists">
+                <div id="playlist11">
+                </div>
+            </div> 
+        </div>
+        </br></br></br></br>
+        <div><h3 class="jukeboxHelp">Use the left and right arrow keys to browse playlists</h3></div>
+
+        <script src="app.js"></script>
+        <script>
+
+        /* Start by showing a playlist chosen at random */
+        var numOfPlaylists = 12;
+        var slideIndex = Math.floor(Math.random() * numOfPlaylists-1);
+        showSlide(slideIndex);
+        
+        /* Function to call the new slide depending on whether left or right arrow key was pressed */
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        /* Function to change slide displayed */
+        function showSlide(curSlide) {
+            var slides = document.getElementsByClassName("slide fade");
+
+            /* Handle edge cases */
+            if (curSlide >= slides.length) { slideIndex = 0; }
+            if (curSlide < 1)              { slideIndex = slides.length-1; }
+
+            /* Set all display to none */
+            var i;
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+
+            /* Display current slide */
+            slides[slideIndex].style.display = "block";
+        }
+
+        /* Add event listener to left and right arrow keys, change playlists when they are pressed */
+        document.addEventListener('keydown', function(e) {
+            switch (e.keyCode) {
+                /* Left key -> go to previous slide */
+                case 37:
+                    changeSlide(-1);
+                    break;
+                /* Right key -> go to next slide */
+                case 39:
+                    changeSlide(+1);
+                    break;
+            }
+        });
+        </script>
+    </body>
+
+</html>

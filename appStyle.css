@@ -1,0 +1,135 @@
+
+/* Style for the slideshow container */
+* {box-sizing:border-box}
+.slideshow {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    max-width: 1000px;
+    position: relative;
+}
+/* Style individual slides */
+.slide {
+    width: 100%;
+    height: 100%;
+    display: inline-block; 
+    text-align: center;
+    border: 2px;
+    border-style: solid;
+    background-color: black;
+    border-color: rgb(67, 219, 135);
+}
+
+/* Style playlist image */
+.img:hover {
+    cursor: pointer;
+}
+.img {
+    border: 5px;
+    border-style: solid;
+    border-color: black;
+    float: left;
+    width: 50%;
+    height: 50%;
+}
+a:hover {
+    cursor:pointer;
+}
+
+/* Style playlist data */
+.title {
+    display:inline;
+    font-family: Prompt;
+    color:rgb(67, 219, 135);
+}
+.owner {
+    display: inline;
+    font-family: Prompt;
+    color: rgb(67, 219, 135);
+}
+.followers{
+    font-family: Prompt;
+    font-size: 10px;
+    color: rgb(67, 219, 135);
+    float: right;
+    padding: 2%;
+    margin-top: -10px;
+}
+.description {
+    font-family: Prompt;
+    font-size:10px;
+    color:rgb(67, 219, 135);
+    margin-top:-5px;
+    padding:8px;
+}
+.track {
+    font-family: Prompt;
+    font-size: 14px;
+    color: rgb(67, 219, 135);
+    margin-top: -10px;
+}
+.top {
+    font-family: Prompt;
+    font-size: 13px;
+    text-decoration: underline;
+    color: rgb(67, 219, 135);
+    margin-top: -10px;
+}
+
+/* Style page title and help text at bottom*/
+.jukebox {
+    font-family: Prompt;
+    font-size: 50px;
+    color: black;
+}
+.jukeboxHelp {
+    font-family: Prompt;
+    font-size: 20px;
+    color: black;
+}
+
+/* Style the background gradient */
+@-webkit-keyframes Gradient {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+@-moz-keyframes Gradient {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+@keyframes Gradient {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+.gradient {
+    margin: auto;
+    width: 85%;
+    background: linear-gradient(-45deg, rgb(67, 219, 135), rgb(77, 245, 153), rgb(211, 255, 231), rgb(0, 0, 0));
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 5s ease infinite;
+    -moz-animation: Gradient 5s ease infinite;
+    animation: Gradient 5s ease infinite;
+    border-radius: 10px;
+    padding: 1%;
+    text-align: center;
+    align-items : center;
+}
+
+/* Fade between playlist selections */
+.fade {
+    animation-name: fade;
+    animation-duration: 2.5s;
+  }
