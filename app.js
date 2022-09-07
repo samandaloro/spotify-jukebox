@@ -2,7 +2,7 @@
 
 /* Spotify playlist IDs -> can be retrieved from the playlist url on open.spotify.com/playlist/ */
 var playlistIds = ["37i9dQZF1DXa8NOEUWPn9W", "37i9dQZF1DXa2PvUpywmrr", "37i9dQZF1DX4dyzvuaRJ0n", "37i9dQZF1DWVY4eLfA3XFQ", 
-                   "37i9dQZF1DXcBWIGoYBM5M", "37i9dQZF1DX4JAvHpjipBk", "37i9dQZF1DX0BcQWzuB7ZO", "37i9dQZF1DX1lVhptIYRda",
+                   "37i9dQZF1DXcBWIGoYBM5M", "37i9dQZF1DXaXB8fQg7xif", "37i9dQZF1DX0BcQWzuB7ZO", "37i9dQZF1DX1lVhptIYRda",
                    "37i9dQZF1DX3oM43CtKnRV", "37i9dQZF1DWVqJMsgEN0F4", "37i9dQZF1DWUZv12GM5cFk", "37i9dQZF1DXd1MXcE8WTXq"];
 var originalPlaylistSize = playlistIds.length;
 /* Playlist API */
@@ -105,6 +105,7 @@ function createDefaultPlaylists() {
 
 function createPlaylist(i) {
 
+    if (playlists[i] == null) return;
     var currentSlide;
     /* Check if playlist is an addition */
     if (i > originalPlaylistSize - 1) {
