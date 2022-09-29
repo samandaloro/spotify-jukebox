@@ -10,3 +10,4 @@ To run the project,
 TODO:
 - ~~Simplify the process of refreshing the token by adding a prompt to update the token in the browser rather than modifying the code~~
 - ~~Add functionality to add new playlists in the browser~~
+- Rewrite using React
